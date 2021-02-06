@@ -1,4 +1,4 @@
-# Optimizing an ML Pipeline in Azure
+# Optimizing an ML Pipeline in Azure using Azure Auto ML
 
 ## Overview
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
