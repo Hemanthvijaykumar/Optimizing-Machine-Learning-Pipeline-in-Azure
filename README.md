@@ -81,14 +81,21 @@ automl_config = AutoMLConfig(
     label_column_name='y',
     n_cross_validations=5,
     )
+The algorithm used in AutoML was SparseNormalizer, XGBoostClassifier, MaxAbsScaler, LightGBM and VotingEnsemble.Among all the models VotingEnsemble was performing best with the highest Accuracy of 0.9180.    
 
 ## Pipeline comparison
-Both the models performed very well , Azure ML hyperdive model achieved 91.4% accuracy and the autoML model achieved 91.7% accuracy.
+Both the models performed very well , Azure ML hyperdive model achieved 91.4% accuracy and the autoML model achieved 91.8% accuracy.
 Here is the best run summary for the model:
 Metrics
   Accuracy:0.9140150818466066
   Max iterations:23
   Regularization Strength:0.619579284712275
+  
+Parameter sampling
+Sampling policy name
+RANDOM
+Parameter space
+{"C":["uniform",[0,10]],"max_iter":["quniform",[20,180,1]]}
 
 ## Future work
 In order to improve the model accuracy we can do more feature engineering to find best optimal features for the prediction model.
