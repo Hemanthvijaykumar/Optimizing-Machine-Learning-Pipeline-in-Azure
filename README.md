@@ -81,6 +81,7 @@ automl_config = AutoMLConfig(
     label_column_name='y',
     n_cross_validations=5,
     )
+    
 The algorithm used in AutoML was SparseNormalizer, XGBoostClassifier, MaxAbsScaler, LightGBM and VotingEnsemble.Among all the models VotingEnsemble was performing best with the highest Accuracy of 0.9180.    
 
 ## Pipeline comparison
