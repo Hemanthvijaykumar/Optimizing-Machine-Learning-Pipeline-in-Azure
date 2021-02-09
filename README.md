@@ -11,7 +11,9 @@ The best performing model was voting ensemble with 91.8% accuracy having Max ite
  
 
 ## Scikit-learn Pipeline
+
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+
 The Scikit-learn pipeline pull data from the provided URL. Following data download, a number of data cleaning steps are carried out including:
 
 Handled NULL values from the original dataset.
