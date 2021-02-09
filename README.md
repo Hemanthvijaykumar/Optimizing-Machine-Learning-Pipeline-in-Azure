@@ -52,9 +52,13 @@ ps = RandomParameterSampling(
     }
 )
 
+C: is the inverse of the regularization term (1/lambda). It tells the model how much large parameters are penalized, smaller values result in larger penalization; must be a positive float.Though a higher C will cause the model to misclassify less, but is much more likely to cause overfit.
+Common values for C is: [0.001,0.1 …10..100]
+max_iter is Maximum number of iterations taken for the solvers to converge in logistic regression.
 
 Early stopping policy
-
+Too little training will mean that the model will underfit the train and the test sets. Too much training will mean that the model will overfit the training dataset and have poor performance on the test set.
+A compromise is to train on the training dataset but to stop training at the point when performance on a validation dataset starts to degrade. This simple, effective, and widely used approach to training machine learning mode is called early stopping.
 In this project i used BanditPolicy(evaluation_interval=2, slack_factor=0.1) that defines an early termination policy based on slack criteria, and a frequency and delay interval for evaluation.This is optional and represents the frequency for applying the policy. Each time the training script logs the primary metric counts as one interval.
 slack_factor: The amount of slack allowed with respect to the best performing training run. This factor specifies the slack as a ratio.
 Any run that doesn't fall within the slack factor or slack amount of the evaluation metric with respect to the best performing run will be terminated. This means that with this policy, the best performing runs will execute until they finish.This allows a relatively intuitive method to screen models, only retaining those with similar or better performance.
